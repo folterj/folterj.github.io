@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <rect width="640" height="360" fill="#eef5f7"/>
+  <!-- Vendor metadata -->
+  <rect x="36" y="62" width="236" height="236" rx="14" fill="#ffffff" stroke="#c9d6dc" stroke-width="2"/>
+  <text x="56" y="96" font-size="15" font-weight="600" fill="#5f6570">vendor metadata</text>
+  <g font-family="Consolas, 'Courier New', monospace" font-size="14">
+    <text x="56" y="132"><tspan fill="#e07b39">Make</tspan><tspan fill="#1d1f23">: Acme</tspan></text>
+    <text x="56" y="160"><tspan fill="#e07b39">Model</tspan><tspan fill="#1d1f23">: Widget-1000</tspan></text>
+    <text x="56" y="188"><tspan fill="#e07b39">Scan</tspan><tspan fill="#1d1f23">:</tspan></text>
+    <text x="76" y="214"><tspan fill="#e07b39">ResolutionX</tspan><tspan fill="#1d1f23">: 1024</tspan></text>
+    <text x="76" y="240"><tspan fill="#e07b39">ResolutionY</tspan><tspan fill="#1d1f23">: 768</tspan></text>
+    <text x="56" y="268"><tspan fill="#e07b39">HV</tspan><tspan fill="#1d1f23">: 1.5 kV</tspan></text>
+  </g>
+  <!-- Arrow -->
+  <path d="M 288 180 H 344" stroke="#0b6e8a" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 338 166 L 356 180 L 338 194" fill="none" stroke="#0b6e8a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Imaging model tree -->
+  <rect x="372" y="62" width="236" height="236" rx="14" fill="#ffffff" stroke="#c9d6dc" stroke-width="2"/>
+  <text x="392" y="96" font-size="15" font-weight="600" fill="#5f6570">imaging model</text>
+  <path d="M 400 120 V 224 M 400 136 H 420 M 400 224 H 420 M 432 148 V 196 M 432 166 H 450 M 432 196 H 450 M 432 236 V 278 M 432 252 H 450 M 432 278 H 450" stroke="#9fb3bc" stroke-width="2" fill="none"/>
+  <g font-size="14">
+    <circle cx="400" cy="114" r="6" fill="#0b6e8a"/>
+    <rect x="420" y="124" width="98" height="24" rx="6" fill="#d9eef3"/><text x="428" y="141" fill="#0b6e8a" font-weight="600">Instrument</text>
+    <rect x="450" y="156" width="134" height="20" rx="5" fill="#f3f6f7"/><text x="458" y="171" fill="#1d1f23">manufacturer</text>
+    <rect x="450" y="186" width="134" height="20" rx="5" fill="#f3f6f7"/><text x="458" y="201" fill="#1d1f23">model</text>
+    <rect x="420" y="212" width="80" height="24" rx="6" fill="#d9eef3"/><text x="428" y="229" fill="#0b6e8a" font-weight="600">Image</text>
+    <rect x="450" y="242" width="134" height="20" rx="5" fill="#f3f6f7"/><text x="458" y="257" fill="#1d1f23">size_x, size_y</text>
+    <rect x="450" y="268" width="134" height="20" rx="5" fill="#f3f6f7"/><text x="458" y="283" fill="#1d1f23">voltage</text>
+  </g>
+</svg>

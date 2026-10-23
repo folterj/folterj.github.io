@@ -56,11 +56,17 @@ def make_thumbnail(name, source):
             data = response.read()
     else:
         data = (ROOT / source).read_bytes()
+    target = SITE / 'thumbs' / name.replace('/', '_')
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if source.lower().endswith('.svg'):
+        # Vector images scale by themselves, so they are used as they are
+        target = target.with_suffix('.svg')
+        target.write_bytes(data)
+        return target.relative_to(SITE).as_posix()
     image = Image.open(io.BytesIO(data))
     image = image.convert('RGBA' if 'A' in image.getbands() or image.mode == 'P' else 'RGB')
     image.thumbnail((THUMBNAIL_SIZE, THUMBNAIL_SIZE))
-    target = SITE / 'thumbs' / (name.replace('/', '_') + '.webp')
-    target.parent.mkdir(parents=True, exist_ok=True)
+    target = target.with_suffix('.webp')
     image.save(target, 'WEBP', quality=85)
     return target.relative_to(SITE).as_posix()
 

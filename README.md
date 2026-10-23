@@ -17,7 +17,7 @@ Edit `site.yml` and push; the site updates within about two minutes.
 | Featured repos, sections and their order | `featured` |
 | A repo's description | its GitHub description, or `descriptions` if it has none |
 | A repo's "Docs" link | the repo's website field on GitHub |
-| A card image | `images`: a URL (e.g. `https://raw.githubusercontent.com/<owner>/<repo>/HEAD/<path>`) or a file in `images/`; add `fit: contain` for logos and diagrams so they aren't cropped |
+| A card image | `images`: a URL (e.g. `https://raw.githubusercontent.com/<owner>/<repo>/HEAD/<path>`) or a file in `images/` (SVGs are used as they are, other images are shrunk); add `fit: contain` for logos and diagrams so they aren't cropped |
 | Repos shown with a paper | `paper_repos`, keyed by DOI in lower case |
 | Publications | add or fix them in ORCID (0000-0001-9704-2925); the next build picks them up |
 | Layout and colours | `template.html`, `style.css` |
@@ -37,7 +37,7 @@ Run it again by hand: Actions → Build and deploy → Run workflow.
 - The previous Joomla site (pages, images, downloads) is backed up at `E:\Personal\PersonalPage\joostdefolter.info-backup`.
 
 ## To do
-- Add images for the cards that show an organisation logo: imaging-metadata-converter, fair-metadata-integration, napari-meta-tiff, zarr-memory-loader, fair-segmentation, ngff-zarr.
+- Replace the drawn illustrations (`images/*.svg`) with real screenshots or figures once those repos have them.
 - Fix the all-caps title of the 2018 NICE paper in ORCID.
 - Confirm the IEEE 11073 papers' repo links (IEEE11073Analyser, IEEEAgentManager) in `paper_repos`.
 - Optionally attach the old site's downloads (installers, manuals) to GitHub Releases on their repos.

@@ -70,6 +70,19 @@ images:
     fit: contain
   folterj/ProMISE2:
     src: images/promise2.png
+  NL-BioImaging/imaging-metadata-converter:
+    src: images/imaging-metadata-converter.svg
+  NL-BioImaging/fair-metadata-integration:
+    src: images/fair-metadata-integration.svg
+  NL-BioImaging/napari-meta-tiff:
+    src: images/napari-meta-tiff.svg
+  folterj/zarr-memory-loader:
+    src: images/zarr-memory-loader.svg
+  NL-BioImaging/fair-segmentation:
+    src: images/fair-segmentation.svg
+  fideus-labs/ngff-zarr:
+    src: https://raw.githubusercontent.com/fideus-labs/ngff-zarr/HEAD/docs/_static/logo.png
+    fit: contain
 
 # Used where a repo has no GitHub description
 descriptions:

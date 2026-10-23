@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.55  0 0 0 0 0.55  0 0 0 0 0.55  0 0 0 0.55 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <clipPath id="canvas"><rect x="150" y="66" width="270" height="262"/></clipPath>
+  </defs>
+  <rect width="640" height="360" fill="#eef5f7"/>
+  <!-- napari-style window -->
+  <rect x="24" y="24" width="592" height="312" rx="10" fill="#262930"/>
+  <rect x="24" y="24" width="592" height="30" rx="10" fill="#414851"/>
+  <rect x="24" y="44" width="592" height="10" fill="#414851"/>
+  <circle cx="44" cy="39" r="5" fill="#e07b39"/><circle cx="62" cy="39" r="5" fill="#e8b23a"/><circle cx="80" cy="39" r="5" fill="#3a9d6b"/>
+  <text x="320" y="44" font-size="13" text-anchor="middle" fill="#c9d1d9">sample.ome.tiff</text>
+  <!-- Layer list -->
+  <rect x="34" y="66" width="106" height="262" rx="6" fill="#30343b"/>
+  <rect x="42" y="76" width="90" height="26" rx="4" fill="#4a5361"/>
+  <text x="50" y="94" font-size="12" fill="#ffffff">sample</text>
+  <rect x="42" y="108" width="90" height="26" rx="4" fill="#3a3f47"/>
+  <text x="50" y="126" font-size="12" fill="#c9d1d9">channel 2</text>
+  <!-- Image canvas -->
+  <g clip-path="url(#canvas)">
+    <rect x="150" y="66" width="270" height="262" fill="#5b5f63"/>
+    <rect x="150" y="66" width="270" height="262" fill="#ffffff" filter="url(#grain)"/>
+    <ellipse cx="282" cy="196" rx="98" ry="84" fill="#8a8f93" stroke="#2b2e31" stroke-width="5"/>
+    <ellipse cx="270" cy="190" rx="40" ry="34" fill="#a7abae" stroke="#2b2e31" stroke-width="4"/>
+    <ellipse cx="336" cy="150" rx="16" ry="8" fill="#3d4044" transform="rotate(30 336 150)"/>
+    <ellipse cx="328" cy="236" rx="18" ry="8" fill="#3d4044" transform="rotate(-20 328 236)"/>
+    <ellipse cx="220" cy="246" rx="14" ry="7" fill="#3d4044"/>
+    <ellipse cx="216" cy="148" rx="13" ry="7" fill="#3d4044" transform="rotate(-40 216 148)"/>
+  </g>
+  <!-- Scale bar -->
+  <rect x="352" y="306" width="54" height="5" fill="#ffffff"/>
+  <text x="379" y="300" font-size="11" text-anchor="middle" fill="#ffffff">1 µm</text>
+  <!-- Metadata panel -->
+  <rect x="430" y="66" width="176" height="262" rx="6" fill="#30343b"/>
+  <text x="444" y="92" font-size="13" font-weight="600" fill="#ffffff">Metadata</text>
+  <g font-size="12">
+    <text x="444" y="122" fill="#8fd3e6">pixel size</text><text x="592" y="122" fill="#c9d1d9" text-anchor="end">4.0 nm</text>
+    <text x="444" y="148" fill="#8fd3e6">dimensions</text><text x="592" y="148" fill="#c9d1d9" text-anchor="end">czyx</text>
+    <text x="444" y="174" fill="#8fd3e6">channels</text><text x="592" y="174" fill="#c9d1d9" text-anchor="end">2</text>
+    <text x="444" y="200" fill="#8fd3e6">voltage</text><text x="592" y="200" fill="#c9d1d9" text-anchor="end">1.5 kV</text>
+    <text x="444" y="226" fill="#8fd3e6">dwell time</text><text x="592" y="226" fill="#c9d1d9" text-anchor="end">2 µs</text>
+    <text x="444" y="252" fill="#8fd3e6">instrument</text><text x="592" y="252" fill="#c9d1d9" text-anchor="end">SEM</text>
+    <text x="444" y="278" fill="#8fd3e6">acquired</text><text x="592" y="278" fill="#c9d1d9" text-anchor="end">2026-03-12</text>
+  </g>
+</svg>

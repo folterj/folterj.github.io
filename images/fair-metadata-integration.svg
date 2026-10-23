@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <rect width="640" height="360" fill="#eef5f7"/>
+  <!-- Links into the crate -->
+  <g stroke="#9fb3bc" stroke-width="2.5" stroke-dasharray="6 6" fill="none">
+    <path d="M 150 92 C 220 92 240 150 268 170"/>
+    <path d="M 150 268 C 220 268 240 210 268 196"/>
+    <path d="M 490 92 C 420 92 400 150 372 170"/>
+    <path d="M 490 268 C 420 268 400 210 372 196"/>
+  </g>
+  <!-- Image -->
+  <rect x="60" y="48" width="96" height="88" rx="10" fill="#ffffff" stroke="#c9d6dc" stroke-width="2"/>
+  <rect x="72" y="60" width="72" height="50" rx="4" fill="#3d4650"/>
+  <circle cx="96" cy="84" r="13" fill="#7fd1e6" opacity="0.85"/>
+  <circle cx="124" cy="92" r="9" fill="#e07b39" opacity="0.85"/>
+  <text x="108" y="128" font-size="13" text-anchor="middle" fill="#5f6570">image</text>
+  <!-- Workflow -->
+  <rect x="60" y="224" width="96" height="88" rx="10" fill="#ffffff" stroke="#c9d6dc" stroke-width="2"/>
+  <g transform="translate(108 258)" fill="none" stroke="#7b5cc4" stroke-width="4">
+    <circle r="13"/>
+    <path d="M 0 -22 V -16 M 0 16 V 22 M -22 0 H -16 M 16 0 H 22 M -15.5 -15.5 L -11.3 -11.3 M 11.3 11.3 L 15.5 15.5 M -15.5 15.5 L -11.3 11.3 M 11.3 -11.3 L 15.5 -15.5"/>
+  </g>
+  <text x="108" y="304" font-size="13" text-anchor="middle" fill="#5f6570">workflow</text>
+  <!-- Results -->
+  <rect x="484" y="48" width="96" height="88" rx="10" fill="#ffffff" stroke="#c9d6dc" stroke-width="2"/>
+  <rect x="496" y="60" width="72" height="50" rx="4" fill="#1d1f23"/>
+  <ellipse cx="518" cy="82" rx="12" ry="8" fill="#3a9d6b"/>
+  <ellipse cx="546" cy="92" rx="10" ry="12" fill="#e8b23a"/>
+  <ellipse cx="530" cy="100" rx="6" ry="5" fill="#7b5cc4"/>
+  <text x="532" y="128" font-size="13" text-anchor="middle" fill="#5f6570">results</text>
+  <!-- Metadata -->
+  <rect x="484" y="224" width="96" height="88" rx="10" fill="#ffffff" stroke="#c9d6dc" stroke-width="2"/>
+  <text x="532" y="270" font-size="26" font-family="Consolas, 'Courier New', monospace" text-anchor="middle" fill="#e07b39">{ }</text>
+  <text x="532" y="304" font-size="13" text-anchor="middle" fill="#5f6570">metadata</text>
+  <!-- Crate -->
+  <path d="M 252 158 L 320 132 L 388 158 L 320 184 Z" fill="#7fc3d6"/>
+  <path d="M 252 158 L 320 184 V 262 L 252 236 Z" fill="#0b6e8a"/>
+  <path d="M 388 158 L 320 184 V 262 L 388 236 Z" fill="#095a71"/>
+  <path d="M 252 158 L 228 132 L 296 108 L 320 132 Z" fill="#a8dbe8"/>
+  <path d="M 388 158 L 412 132 L 344 108 L 320 132 Z" fill="#a8dbe8"/>
+  <text x="286" y="222" font-size="15" font-weight="700" fill="#ffffff" transform="rotate(21 286 222)">RO</text>
+  <text x="330" y="228" font-size="13" font-weight="700" fill="#ffffff" transform="rotate(-21 330 228)">Crate</text>
+  <text x="320" y="300" font-size="14" text-anchor="middle" fill="#0b6e8a" font-family="Consolas, 'Courier New', monospace">ro-crate-metadata.json</text>
+</svg>

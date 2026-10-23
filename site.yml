@@ -16,16 +16,9 @@ links:
   - {label: GitHub, url: "https://github.com/folterj"}
   - {label: ORCID, url: "https://orcid.org/0000-0001-9704-2925"}
   - {label: LinkedIn, url: "https://www.linkedin.com/in/folterj/"}
-  # - {label: Google Scholar, url: "https://scholar.google.com/citations?user=..."}
+  - {label: Google Scholar, url: "https://scholar.google.com/citations?user=AggHQrMAAAAJ"}
 
 featured:
-  - section: Microscopy & image analysis
-    repos:
-      - SBEMimage/SBEMimage
-      - FrancisCrickInstitute/napari-isbem
-      - ccp-volume-em/muvis-align
-      - NL-BioImaging/fair-segmentation
-      - folterj/BioImageOperation
   - section: Bioimaging data infrastructure & FAIR
     repos:
       - NL-BioImaging/biomero
@@ -36,6 +29,13 @@ featured:
       - NL-BioImaging/fair-metadata-integration
       - NL-BioImaging/napari-meta-tiff
       - folterj/zarr-memory-loader
+  - section: Microscopy & image analysis
+    repos:
+      - SBEMimage/SBEMimage
+      - FrancisCrickInstitute/napari-isbem
+      - ccp-volume-em/muvis-align
+      - NL-BioImaging/fair-segmentation
+      - folterj/BioImageOperation
   - section: Contributions to open standards
     repos:
       - ome/ngff

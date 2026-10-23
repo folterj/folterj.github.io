@@ -1,4 +1,5 @@
 """Build the homepage into _site/ from site.yml, the GitHub API and ORCID."""
+import io
 import json
 import os
 import shutil
@@ -8,10 +9,12 @@ from html import escape
 from pathlib import Path
 
 import yaml
+from PIL import Image
 
 ROOT = Path(__file__).parent
 SITE = ROOT / '_site'
 VENUE_TYPES = {'preprint': 'Preprint', 'conference-paper': 'Conference paper', 'book-chapter': 'Book chapter'}
+THUMBNAIL_SIZE = 720
 
 
 def fetch_json(url, headers):
@@ -45,6 +48,22 @@ def fetch_publications(orcid):
     return sorted(publications, key=lambda publication: publication['year'], reverse=True)
 
 
+def make_thumbnail(name, source):
+    """Shrink a repo image (a URL, or a path in this repo) into _site/thumbs/."""
+    if source.startswith('http'):
+        with urllib.request.urlopen(source, timeout=60) as response:
+            data = response.read()
+    else:
+        data = (ROOT / source).read_bytes()
+    image = Image.open(io.BytesIO(data))
+    image = image.convert('RGBA' if 'A' in image.getbands() or image.mode == 'P' else 'RGB')
+    image.thumbnail((THUMBNAIL_SIZE, THUMBNAIL_SIZE))
+    target = SITE / 'thumbs' / (name.replace('/', '_') + '.webp')
+    target.parent.mkdir(parents=True, exist_ok=True)
+    image.save(target, 'WEBP', quality=85)
+    return target.relative_to(SITE).as_posix()
+
+
 def render_links(links):
     return ''.join(f'<a class="pill" href="{escape(link["url"])}">{escape(link["label"])}</a>' for link in links)
 
@@ -57,11 +76,19 @@ def render_orgs(orgs):
     return f'<section><h2>Organisations</h2><div class="orgs">{items}</div></section>'
 
 
-def render_repo(repo, description):
+def render_repo(repo, description, image):
     docs = f'<a href="{escape(repo["homepage"])}">Docs</a>' if repo.get('homepage') else ''
     language = f'<span>{escape(repo["language"])}</span>' if repo.get('language') else ''
+    if image:
+        thumbnail = f'<img src="{escape(image["thumbnail"])}" alt="" loading="lazy">'
+        thumbnail_class = f'thumb {image.get("fit", "cover")}'
+    else:
+        # Repos without an image show their owner's logo, so every card keeps the same shape
+        thumbnail = f'<img src="{escape(repo["owner"]["avatar_url"])}&s=120" alt="" loading="lazy">'
+        thumbnail_class = 'thumb placeholder'
     return (
         f'<article class="card">'
+        f'<a class="{thumbnail_class}" href="{escape(repo["html_url"])}" tabindex="-1">{thumbnail}</a>'
         f'<div class="owner"><img src="{escape(repo["owner"]["avatar_url"])}&s=40" alt="" loading="lazy">{escape(repo["owner"]["login"])}</div>'
         f'<h3><a href="{escape(repo["html_url"])}">{escape(repo["name"])}</a></h3>'
         f'<p>{escape(description)}</p>'
@@ -69,11 +96,11 @@ def render_repo(repo, description):
         f'</article>')
 
 
-def render_featured(featured, repos, descriptions):
+def render_featured(featured, repos, descriptions, images):
     sections = []
     for section in featured:
         cards = ''.join(
-            render_repo(repos[name], repos[name]['description'] or descriptions.get(name, ''))
+            render_repo(repos[name], repos[name]['description'] or descriptions.get(name, ''), images.get(name))
             for name in section['repos'])
         sections.append(f'<section><h2>{escape(section["section"])}</h2><div class="grid">{cards}</div></section>')
     return ''.join(sections)
@@ -103,6 +130,11 @@ def build():
     orgs = [github(f'orgs/{org["login"]}') for org in github(f'users/{config["github_user"]}/orgs')]
     publications = fetch_publications(config['orcid'])
 
+    shutil.rmtree(SITE, ignore_errors=True)
+    images = config.get('images', {})
+    for name, image in images.items():
+        image['thumbnail'] = make_thumbnail(name, image['src'])
+
     template = (ROOT / 'template.html').read_text(encoding='utf-8')
     page = (template
             .replace('{{name}}', escape(config['name']))
@@ -111,11 +143,10 @@ def build():
             .replace('{{bio}}', escape(config['bio'].strip()))
             .replace('{{links}}', render_links(config['links']))
             .replace('{{orgs}}', render_orgs(orgs))
-            .replace('{{featured}}', render_featured(config['featured'], repos, config.get('descriptions', {})))
+            .replace('{{featured}}', render_featured(config['featured'], repos, config.get('descriptions', {}), images))
             .replace('{{publications}}', render_publications(publications, paper_repos))
             .replace('{{updated}}', date.today().isoformat()))
 
-    shutil.rmtree(SITE, ignore_errors=True)
     shutil.copytree(ROOT / 'static', SITE / 'static')
     for name in ('CNAME', 'style.css'):
         if (ROOT / name).exists():

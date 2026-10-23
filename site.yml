@@ -44,6 +44,33 @@ featured:
     repos:
       - folterj/ProMISE2
 
+# Card images: a URL or a path in this repo; fit "contain" shows logos and diagrams whole instead of cropping
+images:
+  NL-BioImaging/biomero:
+    src: https://raw.githubusercontent.com/NL-BioImaging/biomero/HEAD/resources/tutorials/images/cellexpansion.png
+  NL-BioImaging/NL-BIOMERO:
+    src: https://raw.githubusercontent.com/NL-BioImaging/NL-BIOMERO/HEAD/docs/BIOMERO2_overview.png
+    fit: contain
+  FrancisCrickInstitute/OmeSliCC:
+    src: https://raw.githubusercontent.com/FrancisCrickInstitute/OmeSliCC/HEAD/docs/images/logo.png
+    fit: contain
+  NL-BioImaging/biomero-converter:
+    src: https://raw.githubusercontent.com/NL-BioImaging/biomero-converter/HEAD/docs/images/logo.png
+    fit: contain
+  SBEMimage/SBEMimage:
+    src: https://raw.githubusercontent.com/SBEMimage/SBEMimage/HEAD/docs/images/viewport.jpg
+  FrancisCrickInstitute/napari-isbem:
+    src: https://raw.githubusercontent.com/FrancisCrickInstitute/napari-isbem/HEAD/.assets/hero.png
+  ccp-volume-em/muvis-align:
+    src: https://raw.githubusercontent.com/ccp-volume-em/muvis-align/HEAD/docs/images/EMPAIR12193overlay.png
+  folterj/BioImageOperation:
+    src: images/bioimageoperation_tracking.png
+  ome/ngff:
+    src: https://raw.githubusercontent.com/ome/ngff/HEAD/images/ngff-paper-figure.png
+    fit: contain
+  folterj/ProMISE2:
+    src: images/promise2.png
+
 # Used where a repo has no GitHub description
 descriptions:
   NL-BioImaging/fair-metadata-integration: Integrate and package all metadata into a Workflow RO-Crate

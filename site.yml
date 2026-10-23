@@ -19,7 +19,7 @@ links:
   - {label: Google Scholar, url: "https://scholar.google.com/citations?user=AggHQrMAAAAJ"}
 
 featured:
-  - section: Bioimaging data infrastructure & FAIR
+  - section: Bioimaging data & FAIR
     repos:
       - NL-BioImaging/biomero
       - NL-BioImaging/NL-BIOMERO

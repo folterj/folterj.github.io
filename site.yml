@@ -1,0 +1,59 @@
+name: Dr Joost de Folter
+title: Data scientist · Research Software Engineer
+photo: static/joost.jpg
+github_user: folterj
+orcid: 0000-0001-9704-2925
+
+bio: >
+  Dr Joost de Folter is a multidisciplinary data scientist and Research Software Engineer specialising in
+  microscopy data science, machine learning, image analysis, modelling and visualisation. He has extensive
+  experience developing automated and reproducible solutions across biomedical research, healthcare and AI.
+  At the Francis Crick Institute and through international bioimaging collaborations, he works on data, ML and
+  AI projects, large-scale microscopy analysis, deep learning and open science, with a particular interest in
+  FAIR data, open standards and translating complex scientific challenges into practical computational solutions.
+
+links:
+  - {label: GitHub, url: "https://github.com/folterj"}
+  - {label: ORCID, url: "https://orcid.org/0000-0001-9704-2925"}
+  - {label: LinkedIn, url: "https://www.linkedin.com/in/folterj/"}
+  # - {label: Google Scholar, url: "https://scholar.google.com/citations?user=..."}
+
+featured:
+  - section: Microscopy & image analysis
+    repos:
+      - SBEMimage/SBEMimage
+      - FrancisCrickInstitute/napari-isbem
+      - ccp-volume-em/muvis-align
+      - NL-BioImaging/fair-segmentation
+      - folterj/BioImageOperation
+  - section: Bioimaging data infrastructure & FAIR
+    repos:
+      - NL-BioImaging/biomero
+      - NL-BioImaging/NL-BIOMERO
+      - FrancisCrickInstitute/OmeSliCC
+      - NL-BioImaging/biomero-converter
+      - NL-BioImaging/imaging-metadata-converter
+      - NL-BioImaging/fair-metadata-integration
+      - NL-BioImaging/napari-meta-tiff
+      - folterj/zarr-memory-loader
+  - section: Contributions to open standards
+    repos:
+      - ome/ngff
+      - fideus-labs/ngff-zarr
+  - section: Earlier work
+    repos:
+      - folterj/ProMISE2
+
+# Used where a repo has no GitHub description
+descriptions:
+  NL-BioImaging/fair-metadata-integration: Integrate and package all metadata into a Workflow RO-Crate
+
+# Repos shown with a publication, keyed by DOI
+paper_repos:
+  "10.64898/2026.06.05.730298": [FrancisCrickInstitute/napari-isbem, SBEMimage/SBEMimage]
+  "10.1016/j.ohx.2023.e00443": [folterj/BioImageOperation]
+  "10.1111/tra.12789": [FrancisCrickInstitute/Etch-a-Cell-Nuclear-Envelope]
+  "10.1101/2020.07.28.223024": [FrancisCrickInstitute/Etch-a-Cell-Nuclear-Envelope]
+  "10.1016/j.chroma.2010.12.079": [folterj/ProMISE2]
+  "10.1109/TBME.2017.2732501": [folterj/IEEE11073Analyser, folterj/IEEEAgentManager]
+  "10.1109/PHT.2013.6461298": [folterj/IEEE11073Analyser]

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{name}}</title>
+<meta name="description" content="{{title}}">
+<link rel="icon" href="static/joost.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <img class="photo" src="{{photo}}" alt="{{name}}">
+    <div>
+      <h1>{{name}}</h1>
+      <p class="subtitle">{{title}}</p>
+      <nav>{{links}}</nav>
+    </div>
+  </header>
+  <p class="bio">{{bio}}</p>
+  {{featured}}
+  {{publications}}
+  {{orgs}}
+  <footer>Updated {{updated}} · Built from <a href="https://github.com/folterj/folterj.github.io">folterj.github.io</a></footer>
+</main>
+</body>
+</html>

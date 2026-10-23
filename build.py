@@ -1,4 +1,5 @@
 """Build the homepage into _site/ from site.yml, the GitHub API and ORCID."""
+import hashlib
 import io
 import json
 import os
@@ -145,7 +146,9 @@ def build():
             .replace('{{orgs}}', render_orgs(orgs))
             .replace('{{featured}}', render_featured(config['featured'], repos, config.get('descriptions', {}), images))
             .replace('{{publications}}', render_publications(publications, paper_repos))
-            .replace('{{updated}}', date.today().isoformat()))
+            .replace('{{updated}}', date.today().isoformat())
+            # Browsers cache style.css, so a changed stylesheet needs a new URL to be fetched
+            .replace('{{style_version}}', hashlib.sha1((ROOT / 'style.css').read_bytes()).hexdigest()[:8]))
 
     shutil.copytree(ROOT / 'static', SITE / 'static')
     for name in ('CNAME', 'style.css'):

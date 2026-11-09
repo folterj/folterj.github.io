@@ -46,7 +46,25 @@ def fetch_publications(orcid):
             'venue': (summary.get('journal-title') or {}).get('value') or VENUE_TYPES.get(summary['type'], ''),
             'doi': dois[0] if dois else None,
         })
+    preprints = superseded_preprints({publication['doi'] for publication in publications if publication['doi']})
+    publications = [publication for publication in publications if publication['doi'] not in preprints]
     return sorted(publications, key=lambda publication: publication['year'], reverse=True)
+
+
+def superseded_preprints(dois):
+    """DOIs of preprints whose published version is also in the list, according to Crossref."""
+    preprints = set()
+    for doi in dois:
+        try:
+            relation = fetch_json(f'https://api.crossref.org/works/{doi}', {})['message'].get('relation', {})
+        except Exception:
+            # Crossref is only used to tidy the list, so a failed lookup keeps the publication
+            continue
+        related = {item['id'].lower() for item in relation.get('has-preprint', [])}
+        preprints |= related & dois
+        if any(item['id'].lower() in dois for item in relation.get('is-preprint-of', [])):
+            preprints.add(doi)
+    return preprints
 
 
 def make_thumbnail(name, source):

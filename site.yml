@@ -6,11 +6,13 @@ orcid: 0000-0001-9704-2925
 
 bio: >
   Dr Joost de Folter is a multidisciplinary data scientist and Research Software Engineer specialising in
-  microscopy data science, machine learning, image analysis, modelling and visualisation. He has extensive
-  experience developing automated and reproducible solutions across biomedical research, healthcare and AI.
-  At the Francis Crick Institute and through international bioimaging collaborations, he works on data, ML and
-  AI projects, large-scale microscopy analysis, deep learning and open science, with a particular interest in
-  FAIR data, open standards and translating complex scientific challenges into practical computational solutions.
+  microscopy data science, machine learning, image analysis, modelling and visualisation. He divides his time
+  between the Francis Crick Institute in London, where he develops image analysis and registration software for
+  large-scale microscopy research, and NL-BioImaging in the Netherlands, where he works on FAIR bioimaging data
+  infrastructure, OME-Zarr conversion and metadata standards across the national network. He has extensive
+  experience developing automated and reproducible solutions across biomedical research, healthcare and AI, with
+  a particular interest in open standards, open science and translating complex scientific challenges into
+  practical computational solutions.
 
 links:
   - {label: GitHub, url: "https://github.com/folterj"}
@@ -19,29 +21,32 @@ links:
   - {label: Google Scholar, url: "https://scholar.google.com/citations?user=AggHQrMAAAAJ"}
 
 featured:
+  # Newest first, by when the work started
   - section: Bioimaging data & FAIR
     repos:
+      - NL-BioImaging/fair-metadata-integration
+      - NL-BioImaging/imaging-metadata-converter
+      - NL-BioImaging/napari-meta-tiff
       - NL-BioImaging/biomero
       - NL-BioImaging/NL-BIOMERO
-      - FrancisCrickInstitute/OmeSliCC
-      - NL-BioImaging/biomero-converter
-      - NL-BioImaging/imaging-metadata-converter
-      - NL-BioImaging/fair-metadata-integration
-      - NL-BioImaging/napari-meta-tiff
       - folterj/zarr-memory-loader
+      - NL-BioImaging/biomero-converter
+      - FrancisCrickInstitute/OmeSliCC
   - section: Microscopy & image analysis
     repos:
-      - SBEMimage/SBEMimage
+      - NL-BioImaging/fair-segmentation
       - FrancisCrickInstitute/napari-isbem
       - ccp-volume-em/muvis-align
-      - NL-BioImaging/fair-segmentation
+      - SBEMimage/SBEMimage
       - folterj/BioImageOperation
   - section: Contributions to open standards
     repos:
-      - ome/ngff
       - fideus-labs/ngff-zarr
+      - ome/ngff
   - section: Earlier work
     repos:
+      - FrancisCrickInstitute/Etch-a-Cell-Nuclear-Envelope
+      - folterj/IEEE11073Analyser
       - folterj/ProMISE2
 
 # Card images: a URL or a path in this repo; fit "contain" shows logos and diagrams whole instead of cropping
@@ -87,13 +92,14 @@ images:
 # Used where a repo has no GitHub description
 descriptions:
   NL-BioImaging/fair-metadata-integration: Integrate and package all metadata into a Workflow RO-Crate
+  FrancisCrickInstitute/Etch-a-Cell-Nuclear-Envelope: Deep learning segmentation of the nuclear envelope in electron microscopy, trained on citizen science annotations
 
 # Repos shown with a publication, keyed by DOI
 paper_repos:
+  "10.1111/jmi.70114": [NL-BioImaging/biomero, NL-BioImaging/NL-BIOMERO]
   "10.64898/2026.06.05.730298": [FrancisCrickInstitute/napari-isbem, SBEMimage/SBEMimage]
   "10.1016/j.ohx.2023.e00443": [folterj/BioImageOperation]
   "10.1111/tra.12789": [FrancisCrickInstitute/Etch-a-Cell-Nuclear-Envelope]
-  "10.1101/2020.07.28.223024": [FrancisCrickInstitute/Etch-a-Cell-Nuclear-Envelope]
   "10.1016/j.chroma.2010.12.079": [folterj/ProMISE2]
   "10.1109/TBME.2017.2732501": [folterj/IEEE11073Analyser, folterj/IEEEAgentManager]
   "10.1109/PHT.2013.6461298": [folterj/IEEE11073Analyser]

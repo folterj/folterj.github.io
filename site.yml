@@ -100,6 +100,7 @@ images:
 # Replace a repo's GitHub description, or give one where it has none
 descriptions:
   FrancisCrickInstitute/napari-isbem: Multimodal SBEM acquisition targeting
+  ccp-volume-em/guide: Community best practice guide
   NL-BioImaging/fair-metadata-integration: Integrate and package all metadata into a Workflow RO-Crate
   FrancisCrickInstitute/Etch-a-Cell-Nuclear-Envelope: Deep learning segmentation of the nuclear envelope in electron microscopy, trained on citizen science annotations
 

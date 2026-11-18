@@ -125,7 +125,7 @@ def render_featured(featured, repos, descriptions, images):
     sections = []
     for section in featured:
         cards = ''.join(
-            render_repo(repos[name], repos[name]['description'] or descriptions.get(name, ''), images.get(name))
+            render_repo(repos[name], descriptions.get(name) or repos[name]['description'] or '', images.get(name))
             for name in section['repos'])
         sections.append(f'<section><h2>{escape(section["section"])}</h2><div class="grid">{cards}</div></section>')
     return ''.join(sections)

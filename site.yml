@@ -102,6 +102,7 @@ descriptions:
   FrancisCrickInstitute/napari-mass: Microscopy Array Section Setup napari plugin (CZI-funded)
   FrancisCrickInstitute/napari-isbem: Multimodal SBEM acquisition targeting (MRC-funded)
   ccp-volume-em/guide: Community good practice guide (UKRI-funded)
+  ccp-volume-em/muvis-align: Image registration using multiview-stitcher (UKRI-funded)
   NL-BioImaging/fair-metadata-integration: Integrate and package all metadata into a Workflow RO-Crate
   FrancisCrickInstitute/Etch-a-Cell-Nuclear-Envelope: Deep learning segmentation of the nuclear envelope in electron microscopy, trained on citizen science annotations
 

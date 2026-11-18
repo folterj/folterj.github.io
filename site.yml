@@ -36,6 +36,7 @@ featured:
     repos:
       - NL-BioImaging/fair-segmentation
       - FrancisCrickInstitute/napari-isbem
+      - FrancisCrickInstitute/napari-mass
       - ccp-volume-em/muvis-align
       - SBEMimage/SBEMimage
       - folterj/BioImageOperation
@@ -66,6 +67,8 @@ images:
     src: https://raw.githubusercontent.com/SBEMimage/SBEMimage/HEAD/docs/images/viewport.jpg
   FrancisCrickInstitute/napari-isbem:
     src: https://raw.githubusercontent.com/FrancisCrickInstitute/napari-isbem/HEAD/.assets/hero.png
+  FrancisCrickInstitute/napari-mass:
+    src: images/napari-mass.svg
   ccp-volume-em/muvis-align:
     src: https://raw.githubusercontent.com/ccp-volume-em/muvis-align/HEAD/docs/images/EMPAIR12193overlay.png
   folterj/BioImageOperation:

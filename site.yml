@@ -99,12 +99,23 @@ images:
 
 # Replace a repo's GitHub description, or give one where it has none
 descriptions:
-  FrancisCrickInstitute/napari-mass: Microscopy Array Section Setup napari plugin (CZI-funded)
-  FrancisCrickInstitute/napari-isbem: Multimodal SBEM acquisition targeting (MRC-funded)
-  ccp-volume-em/guide: Community good practice guide (UKRI-funded)
-  ccp-volume-em/muvis-align: Image registration using multiview-stitcher (UKRI-funded)
+  FrancisCrickInstitute/napari-isbem: Multimodal SBEM acquisition targeting
   NL-BioImaging/fair-metadata-integration: Integrate and package all metadata into a Workflow RO-Crate
   FrancisCrickInstitute/Etch-a-Cell-Nuclear-Envelope: Deep learning segmentation of the nuclear envelope in electron microscopy, trained on citizen science annotations
+
+# Funder shown after a repo's description, as "(<funder>-funded)"
+funding:
+  NL-BioImaging/fair-metadata-integration: NWO
+  NL-BioImaging/imaging-metadata-converter: NWO
+  NL-BioImaging/napari-meta-tiff: NWO
+  NL-BioImaging/biomero: NWO
+  NL-BioImaging/NL-BIOMERO: NWO
+  NL-BioImaging/biomero-converter: NWO
+  NL-BioImaging/fair-segmentation: NWO
+  ccp-volume-em/guide: UKRI
+  ccp-volume-em/muvis-align: UKRI
+  FrancisCrickInstitute/napari-isbem: MRC
+  FrancisCrickInstitute/napari-mass: CZI
 
 # Repos shown with a publication, keyed by DOI
 paper_repos:

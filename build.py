@@ -121,11 +121,16 @@ def render_repo(repo, description, image):
         f'</article>')
 
 
-def render_featured(featured, repos, descriptions, images):
+def describe(repo, description, funder):
+    description = description or repo['description'] or ''
+    return f'{description} ({funder}-funded)' if funder else description
+
+
+def render_featured(featured, repos, descriptions, funding, images):
     sections = []
     for section in featured:
         cards = ''.join(
-            render_repo(repos[name], descriptions.get(name) or repos[name]['description'] or '', images.get(name))
+            render_repo(repos[name], describe(repos[name], descriptions.get(name), funding.get(name)), images.get(name))
             for name in section['repos'])
         sections.append(f'<section><h2>{escape(section["section"])}</h2><div class="grid">{cards}</div></section>')
     return ''.join(sections)
@@ -168,7 +173,7 @@ def build():
             .replace('{{bio}}', escape(config['bio'].strip()))
             .replace('{{links}}', render_links(config['links']))
             .replace('{{orgs}}', render_orgs(orgs))
-            .replace('{{featured}}', render_featured(config['featured'], repos, config.get('descriptions', {}), images))
+            .replace('{{featured}}', render_featured(config['featured'], repos, config.get('descriptions', {}), config.get('funding', {}), images))
             .replace('{{publications}}', render_publications(publications, paper_repos))
             .replace('{{updated}}', date.today().isoformat())
             # Browsers cache style.css, so a changed stylesheet needs a new URL to be fetched

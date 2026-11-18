@@ -37,9 +37,9 @@ featured:
     repos:
       - ccp-volume-em/guide
       - NL-BioImaging/fair-segmentation
+      - ccp-volume-em/muvis-align
       - FrancisCrickInstitute/napari-isbem
       - FrancisCrickInstitute/napari-mass
-      - ccp-volume-em/muvis-align
       - SBEMimage/SBEMimage
       - folterj/BioImageOperation
   - section: Contributions to open standards

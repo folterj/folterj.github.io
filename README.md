@@ -15,6 +15,7 @@ Edit `site.yml` and push; the site updates within about two minutes.
 | Bio, title, profile links | `bio`, `title`, `links` |
 | Photo | replace `static/joost.jpg` |
 | Featured repos, sections and their order | `featured` |
+| A card's title (the repo name by default) | `titles` |
 | A repo's description | its GitHub description, or `descriptions` to replace it (or give one where it has none) |
 | A repo's funder, shown as "(NWO-funded)" | `funding` |
 | A repo's "Docs" link | the repo's website field on GitHub |

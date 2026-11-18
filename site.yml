@@ -36,8 +36,8 @@ featured:
   - section: Microscopy & image analysis
     repos:
       - ccp-volume-em/guide
-      - NL-BioImaging/fair-segmentation
       - ccp-volume-em/muvis-align
+      - NL-BioImaging/fair-segmentation
       - FrancisCrickInstitute/napari-isbem
       - FrancisCrickInstitute/napari-mass
       - SBEMimage/SBEMimage
@@ -96,6 +96,10 @@ images:
   fideus-labs/ngff-zarr:
     src: https://raw.githubusercontent.com/fideus-labs/ngff-zarr/HEAD/docs/_static/logo.png
     fit: contain
+
+# Shown instead of a repo's name as its card title
+titles:
+  ccp-volume-em/guide: best practice guide
 
 # Replace a repo's GitHub description, or give one where it has none
 descriptions:

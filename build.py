@@ -101,7 +101,7 @@ def render_orgs(orgs):
     return f'<section><h2>Organisations</h2><div class="orgs">{items}</div></section>'
 
 
-def render_repo(repo, description, image):
+def render_repo(repo, title, description, image):
     docs = f'<a href="{escape(repo["homepage"])}">Docs</a>' if repo.get('homepage') else ''
     language = f'<span>{escape(repo["language"])}</span>' if repo.get('language') else ''
     if image:
@@ -115,7 +115,7 @@ def render_repo(repo, description, image):
         f'<article class="card">'
         f'<a class="{thumbnail_class}" href="{escape(repo["html_url"])}" tabindex="-1">{thumbnail}</a>'
         f'<div class="owner"><img src="{escape(repo["owner"]["avatar_url"])}&s=40" alt="" loading="lazy">{escape(repo["owner"]["login"])}</div>'
-        f'<h3><a href="{escape(repo["html_url"])}">{escape(repo["name"])}</a></h3>'
+        f'<h3><a href="{escape(repo["html_url"])}">{escape(title)}</a></h3>'
         f'<p>{escape(description)}</p>'
         f'<div class="meta">{language}<span>★ {repo["stargazers_count"]}</span>{docs}</div>'
         f'</article>')
@@ -126,11 +126,11 @@ def describe(repo, description, funder):
     return f'{description} ({funder}-funded)' if funder else description
 
 
-def render_featured(featured, repos, descriptions, funding, images):
+def render_featured(featured, repos, titles, descriptions, funding, images):
     sections = []
     for section in featured:
         cards = ''.join(
-            render_repo(repos[name], describe(repos[name], descriptions.get(name), funding.get(name)), images.get(name))
+            render_repo(repos[name], titles.get(name, repos[name]['name']), describe(repos[name], descriptions.get(name), funding.get(name)), images.get(name))
             for name in section['repos'])
         sections.append(f'<section><h2>{escape(section["section"])}</h2><div class="grid">{cards}</div></section>')
     return ''.join(sections)
@@ -173,7 +173,7 @@ def build():
             .replace('{{bio}}', escape(config['bio'].strip()))
             .replace('{{links}}', render_links(config['links']))
             .replace('{{orgs}}', render_orgs(orgs))
-            .replace('{{featured}}', render_featured(config['featured'], repos, config.get('descriptions', {}), config.get('funding', {}), images))
+            .replace('{{featured}}', render_featured(config['featured'], repos, config.get('titles', {}), config.get('descriptions', {}), config.get('funding', {}), images))
             .replace('{{publications}}', render_publications(publications, paper_repos))
             .replace('{{updated}}', date.today().isoformat())
             # Browsers cache style.css, so a changed stylesheet needs a new URL to be fetched
